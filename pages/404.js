@@ -6,11 +6,11 @@ export default function Custom404() {
   return (
     <Layout>
       <Head>
-        <title> <h1>404 - Page Not Found</h1></title>
+        <title>404 - Page Not Found</title>
       </Head>
       <article>
       	<h1 className={utilStyles.headingXl}>Uh oh...</h1>
-      	<p>Sadly, the page you are looking for cannot be found.</p>
+      	<p>Error 404. Sadly, the page you are looking for cannot be found.</p>
       </article>
     </Layout>
   )

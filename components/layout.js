@@ -18,7 +18,7 @@ export default function Layout({ children, home }) {
       </Head>
       <header className={styles.header}>
         <>
-          <img src="/images/chef.svg" className={`${styles.headerHomeImage}`} alt={siteTitle} />
+          <img src="/assets/chef.svg" className={`${styles.headerHomeImage}`} alt={siteTitle} />
           <h1 className={utilStyles.heading2Xl}>{siteTitle}</h1>
         </>
       </header>

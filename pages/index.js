@@ -24,12 +24,12 @@ export default function Home({ allPostsData }) {
       </section>
       <section className={`${utilStyles.padding1px}`}>
         <ul className={utilStyles.list}>
-          {allPostsData.map(({ id, date, title }) => (
+          {allPostsData.map(({ id, title }) => (
             <li className={utilStyles.listItem} key={id}>
               <Link href="/posts/[id]" as={`/posts/${id}`}>
                 <a><h2 className={utilStyles.headingLg}>{title}</h2></a>
               </Link>
-              <p>{date}</p>
+              <img src={`/uploads/${id}.gif`} width="100%" height="100%" alt={title} />
             </li>
           ))}
         </ul>

@@ -11,7 +11,13 @@ export default function Post({ postData }) {
       </Head>
       <article>
       	<h1 className={utilStyles.headingXl}>{postData.title}</h1>
+        <img src={`/uploads/${postData.id}.gif`} width="100%" height="100%" alt={postData.title} />
       	<p>{postData.date}</p>
+        <p>{postData.category}</p>
+        <p>{postData.act}</p>
+        <ul>
+          {postData.tags.map((item, index) => <li key={index}>{item}</li>)}
+        </ul>
       </article>
     </Layout>
   )
