@@ -1,14 +1,12 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import styles from './layout.module.css'
-import utilStyles from '../styles/utils.module.css'
 
 export const siteTitle = 'AnimeFood'
 export const siteDescription = 'Project dedicated to showcasing the most mouthwatering, delicious food your favorite anime characters are eating'
 
 export default function Layout({ children, home }) {
   return (
-    <div className={styles.container}>
+    <div className="max-w-4xl px-5 mx-auto text-center">
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta name="description" content={siteDescription} />
@@ -16,22 +14,22 @@ export default function Layout({ children, home }) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header className={styles.header}>
+      <header className="my-8">
         <>
-          <img src="/assets/chef.svg" className={`${styles.headerHomeImage}`} alt={siteTitle} />
-          <h1 className={utilStyles.heading2Xl}>{siteTitle}</h1>
+          <img src="/chef.svg" className={`${home ? 'w-56' : 'w-48'} mx-auto`} alt={siteTitle} />
+          <h1 className={`${home ? 'text-5xl' : 'text-4xl'} font-bold`}>{siteTitle}</h1>
         </>
       </header>
       <main>{children}</main>
       {!home && (
-        <div className={styles.backToHome}>
+        <div className="my-8">
           <Link href="/">
-            <a>← Back to home</a>
+            <a class="bg-gray-600 hover:bg-gray-700 text-white font-semibold py-2 px-4 rounded-full">&larr; Back to home</a>
           </Link>
         </div>
       )}
-      <footer>
-        <p className={`${utilStyles.textCenter} ${utilStyles.textSmall} ${utilStyles.lightText}`}>
+      <footer class="my-8">
+        <p className="text-xs">
           &copy; 2020 <strong>CreatedbyWing</strong>, powered by <a href="https://www.nextjs.org">Next.js</a>, icon by <a href="https://www.flaticon.com/free-icon/chef_526190" title="Those Icons">Those Icons</a>
         </p>
       </footer>

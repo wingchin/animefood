@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import utilStyles from '../styles/utils.module.css'
 import Layout, { siteTitle, siteDescription } from '../components/layout'
+import Card from '../components/card'
 import { getSortedPostsData } from '../lib/posts'
 
 export async function getStaticProps() {
@@ -19,20 +19,19 @@ export default function Home({ allPostsData }) {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className={utilStyles.headingMd}>
-        <p className={utilStyles.textCenter}>{siteDescription}</p>
+      <section className="my-8">
+        <p className="text-2xl md:w-3/4 mx-auto font-light">{siteDescription}</p>
       </section>
-      <section className={`${utilStyles.padding1px}`}>
-        <ul className={utilStyles.list}>
-          {allPostsData.map(({ id, title }) => (
-            <li className={utilStyles.listItem} key={id}>
+      <section>
+        <div className="grid md:grid-cols-3 gap-6">
+          {allPostsData.map(({ id, title, show, tags }) => (
+            <div key={id}>
               <Link href="/posts/[id]" as={`/posts/${id}`}>
-                <a><h2 className={utilStyles.headingLg}>{title}</h2></a>
+                <a><Card grid id={id} title={title} show={show} tags={tags} /></a>
               </Link>
-              <img src={`/uploads/${id}.gif`} width="100%" height="100%" alt={title} />
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       </section>
     </Layout>
   )
