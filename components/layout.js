@@ -16,7 +16,7 @@ export default function Layout({ children, home }) {
       </Head>
       <header className="my-8">
         <>
-          <img src="/chef.svg" className={`${home ? 'w-56' : 'w-48'} mx-auto`} alt={siteTitle} />
+          <img src="/chef.svg" className={`${home ? 'w-48' : 'w-32'} mx-auto`} alt={siteTitle} />
           <h1 className={`${home ? 'text-5xl' : 'text-4xl'} font-bold`}>{siteTitle}</h1>
         </>
       </header>

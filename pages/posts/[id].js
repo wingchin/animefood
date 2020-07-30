@@ -29,7 +29,7 @@ export default function Post({ postData }) {
         <title>{postData.title}</title>
       </Head>
       <article>
-        <Card id={postData.id} title={postData.title} tags={postData.tags} show={postData.show} />
+        <Card id={postData.id} title={postData.title} tags={postData.tags} show={postData.show} category={postData.category} />
       </article>
     </Layout>
   )
